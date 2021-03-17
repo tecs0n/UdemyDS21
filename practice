@@ -1,0 +1,107 @@
+# UdemyDS21
+Coding from DS21: Complete DS &amp; ML
+
+
+# creates a dictionary called Address
+Address = { 'Street':'180 Adams Street', 'City':'Chicago', 'State':'IL', 'Country':'USA'}
+
+    # prints value of Street in Address
+    print(Address['Street'])
+
+    # changes value of Street
+    Address['Street'] = '181 Adams Street'
+
+    # adds a key value pair to Address
+    Address['ZIP'] = 60611
+
+    # deletes a key-value pair
+    del Address['ZIP']
+
+    # creates length variable by retrieving length of Address
+    length = len(Address)
+
+    # converts Address into string
+    str(Address)
+
+    # gets all the keys (aka first half of pair)
+    print(Address.keys())
+
+    # gets all the values
+    print(Address.values))
+
+
+# File Handling
+
+    # opens the csv file and r is for reading
+    cityTemp = open('citytemp.csv', 'r')
+
+    # tip always use a (append) instead of w (write) to prevent file loss
+
+
+    citywrite = open('citywrite.csv', 'a')
+
+    # line is one line (converts to string), lines reads all (converts to list)
+    rec1 = cityTemp.readline()
+    rec2 = cityTemp.readlines()
+    # rec 2 starts reading after rec 1, because pointer passed the first line already from executing rec1
+
+
+    # Data Processing
+
+    # comma there because it is the variables are separated in the list
+    # also only converts this into strings
+    city, temperature, unit = rec1.split(',')
+
+    # this won't work because temp currently is a string
+    temperature = (temperature - 32) * 5/9
+
+    #this will because converts to an integer can also use float by changing int to float
+    temperature = int(temperature) - 32) * 5/9
+
+    # write into record
+    citywrite.write(rec1)
+    # but need to close file to see changes
+    citywrite.close()
+  
+  
+    # Loops for Files
+
+    # to change location of cursor
+    cityTemp.seek(0)
+    
+    # prints all lines in console, but has an extra line because it adds an extra line to start a new line
+    for records in cityTemp:
+        print(records)
+        
+    # to remove line, code should execute and say this instead of the prior
+    cityTemp = open('citytemp.csv', 'r')
+    citywrite = open('citywrite.csv', 'a')
+    cityTemp.seek(0)
+    for records in cityTemp:
+        records = records.rstrip('\n')
+        print(records)
+    
+    
+    # PRACTICE aka Section 2 Section 25
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
